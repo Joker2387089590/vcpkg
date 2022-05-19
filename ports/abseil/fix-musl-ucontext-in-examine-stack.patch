@@ -1,0 +1,13 @@
+diff --git a/absl/debugging/internal/examine_stack.cc b/absl/debugging/internal/examine_stack.cc
+index 589a3ef..909e120 100644
+--- a/absl/debugging/internal/examine_stack.cc
++++ b/absl/debugging/internal/examine_stack.cc
+@@ -41,7 +41,7 @@ namespace debugging_internal {
+ // unknown. vuc is a ucontext_t*. We use void* to avoid the use of
+ // ucontext_t on non-POSIX systems.
+ void* GetProgramCounter(void* vuc) {
+-#ifdef __linux__
++#if defined(__linux__) && defined (__GLIBC__)
+   if (vuc != nullptr) {
+     ucontext_t* context = reinterpret_cast<ucontext_t*>(vuc);
+ #if defined(__aarch64__)

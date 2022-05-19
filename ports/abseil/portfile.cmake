@@ -22,6 +22,14 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
         cxx17 ABSL_USE_CXX17
 )
 
+vcpkg_extract_source_archive_ex(
+    OUT_SOURCE_PATH SOURCE_PATH
+    ARCHIVE
+        /home/joker/Programma/vcpkg/downloads/abseil-abseil-cpp-215105818dfde3174fe799600bb0f3cae233d0bf.tar.gz
+    PATCHES
+        fix-musl-ucontext-in-examine-stack.patch
+)
+
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     DISABLE_PARALLEL_CONFIGURE
