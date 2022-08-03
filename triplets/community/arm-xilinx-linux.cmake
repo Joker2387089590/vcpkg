@@ -8,4 +8,4 @@ if(NOT CMAKE_HOST_SYSTEM_PROCESSOR)
     execute_process(COMMAND "uname" "-m" OUTPUT_VARIABLE CMAKE_HOST_SYSTEM_PROCESSOR OUTPUT_STRIP_TRAILING_WHITESPACE)
 endif()
 
-set(VCPKG_CHAINLOAD_TOOLCHAIN_FILE /home/joker/repo/cmake/musl-arm-toolchain.cmake)
+set(VCPKG_CHAINLOAD_TOOLCHAIN_FILE ${VCPKG_ROOT_DIR}/triplets/community/musl-arm-toolchain.cmake)
